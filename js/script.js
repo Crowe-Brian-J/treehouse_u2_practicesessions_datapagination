@@ -82,12 +82,12 @@ paginationList.addEventListener('click', (e) => {
     //      - Remove the `active` class from the currently active button
     if (activeButton) {
       activeButton.classList.remove('active')
+      //      - Add the `active` class to the button just clicked
+      targetButton.classList.add('active')
+      //      - Call showPage() passing it `authors` and the content of the button just clicked.
+      const newPage = parseInt(targetButton.textContent)
+      showPage(authors, newPage)
     }
-    //      - Add the `active` class to the button just clicked
-    targetButton.classList.add('active')
-    //      - Call showPage() passing it `authors` and the content of the button just clicked.
-    const newPage = parseInt(targetButton.textContent)
-    showPage(authors, newPage)
   }
 })
 
